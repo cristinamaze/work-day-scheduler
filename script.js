@@ -1,31 +1,36 @@
 $(document).ready(function () {
 
+    
+
 //Current Date and Time//
 var today = moment();
 $("#currentDay").text(today.format("[It is currently:] MMMM Do YYYY, h:mm a"));
 
 //Pull from Local Storage//
-// localStorage.setItem("input-text", JSON.stringify(input-text));
-// localStorage.getItem("input-text")
+$("#9 .text-input").val(localStorage.getItem("9"));
+$("#10 .text-input").val(localStorage.getItem("10"));
+$("#11 .text-input").val(localStorage.getItem("11"));
+$("#12 .text-input").val(localStorage.getItem("12"));
+$("#13 .text-input").val(localStorage.getItem("13"));
+$("#14 .text-input").val(localStorage.getItem("14"));
+$("#15 .text-input").val(localStorage.getItem("15"));
+$("#16 .text-input").val(localStorage.getItem("16"));
+$("#17 .text-input").val(localStorage.getItem("17"));
 
 // //Save Button & click event//
-// $(document).ready(function () {
+$(".saveBtn").on("click", function() {
+    console.log(this);
+    localStorage.setItem("text-input", JSON.stringify("text-input"));
+})
 
-// })
 
-// saveBtn.on("click", function(){
-
-// })
 
 //Check Time//
 let timeCheck = function() {
     var currentTime = moment().hour();
 
-    $(".input-text").each(function(){
+    $(".text-input").each(function(){
         var timeblock = parseInt($(this).attr("id"));
-        console.log(timeblock, currentTime)
-    
-
 
     //Timeblock Color Display//
     if (timeblock === currentTime) {
