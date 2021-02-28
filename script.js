@@ -16,11 +16,10 @@ $("#16 .text-input").val(localStorage.getItem("16"));
 $("#17 .text-input").val(localStorage.getItem("17"));
 
 // //Save Button & Push to Local Storage//
-$("button").click(function() {
-    var block = $(this).siblings("textarea").val();
-    var input = $(this).siblings("div").text();
-    localStorage.setItem(block, input);
-    console.log(this);
+$("saveBtn").click(function() {
+    var input = $(this).siblings(".text-input").val();
+    var block = $(this).siblings("id").text();
+    localStorage.setItem(input, block);
 });
 
 //Check Time//
