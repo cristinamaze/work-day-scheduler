@@ -1,7 +1,5 @@
 $(document).ready(function () {
 
-    
-
 //Current Date and Time//
 var today = moment();
 $("#currentDay").text(today.format("[It is currently:] MMMM Do YYYY, h:mm a"));
@@ -17,13 +15,13 @@ $("#15 .text-input").val(localStorage.getItem("15"));
 $("#16 .text-input").val(localStorage.getItem("16"));
 $("#17 .text-input").val(localStorage.getItem("17"));
 
-// //Save Button & click event//
-$(".saveBtn").on("click", function() {
+// //Save Button & Push to Local Storage//
+$("button").click(function() {
+    var block = $(this).siblings("textarea").val();
+    var input = $(this).siblings("div").text();
+    localStorage.setItem(block, input);
     console.log(this);
-    localStorage.setItem("text-input", JSON.stringify("text-input"));
-})
-
-
+});
 
 //Check Time//
 let timeCheck = function() {
@@ -47,8 +45,6 @@ let timeCheck = function() {
     })
 }; 
 
-//Reset Each Day//
-// var currentDay = moment().format("MMMM Do YYYY");
-
 timeCheck()
+
 })
